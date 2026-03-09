@@ -22,11 +22,11 @@ description: Markdown 문서를 PDF 파일로 변환 (Python 기반)
 - `run_command` 도구를 사용하여 필요한 Python 패키지를 설치하고 스크립트를 실행합니다.
   
 ```bash
-# 필요한 패키지 조용히 설치
+# 필요한 패키지 설치
 pip install --quiet markdown weasyprint
 
-# 생성한 임시 파이썬 스크립트 실행
-python3 /tmp/md_to_pdf_converter.py
+# macOS Homebrew 환경의 경우 weasyprint 라이브러리(cairo 등) 인식을 위해 환경 변수와 함께 실행 
+DYLD_FALLBACK_LIBRARY_PATH=/opt/homebrew/lib python3 /tmp/md_to_pdf_converter.py
 ```
 
 ## 4. 완료 및 파일 경로 보고
